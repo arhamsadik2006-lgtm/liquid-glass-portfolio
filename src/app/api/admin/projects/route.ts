@@ -10,7 +10,7 @@ import type { AspectRatio, CategoryId, DockGroup, Tool } from "@/lib/projects";
 export const dynamic = "force-dynamic";
 
 function checkAuth(req: NextRequest): boolean {
-  const expected = process.env.ADMIN_PASSWORD || "arham-admin-2026";
+  const expected = process.env.ADMIN_PASSWORD;
   const provided = req.headers.get("x-admin-password") || "";
   return provided === expected;
 }
